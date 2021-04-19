@@ -1,7 +1,7 @@
 package Quiz;
 
 import Quiz.School.Student;
-import Quiz.school.ProgrammingStudent;
+import Quiz.School.Programmingban;
 
 
 public class C07_School{
