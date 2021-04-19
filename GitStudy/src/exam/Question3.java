@@ -7,5 +7,6 @@ public class Question3 {
 		System.out.println(apple / 10 + 1);
 		
 		System.out.println("BASKET!!");
+		System.out.println("MAIN branch업데이트!!");
 	}
 }
