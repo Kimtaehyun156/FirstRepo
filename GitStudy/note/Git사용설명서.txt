@@ -57,4 +57,18 @@
  	- 즉 , unstaged는 변화는 있었지만 아직 더만들어야 하는 상태이고
  	 staged에 포함시킨 것은 변화가 있었고, 다 만든 상태인 코드들을 말한다  
  
- #연습해보기 : 여태 공부했던 JavaStudy의 모든 내용을 Github에 올리고 본인의 깃주소를 보내주세요 
+ # branch(나뭇가지)
+ 	- 하나의 레포지토리를 다양한 상태로 보관하기 위한 기능 
+ 	- Git Repositorise -> switch to .. -> New Branch 
+ 	- checkout을 통해 언제든지 원하는 branch로 전환이 가능하다
+ 	- branch를 전환하면 커밋하지 않은 작업 내용들은 모두 사라진다 
+ 	
+ 	orgin/ main  ㅁ
+ 	
+ 	main		 ㅁ - ㅁ - ㅁ  - ㅁ  - ㅁ  
+						   \
+						    ㅁ  - ㅁ - ㅁ - branchA
+ 									   \
+ 									   	ㅁ - branchB
+ 									   	
+ 									   A + B = merge(병합)
