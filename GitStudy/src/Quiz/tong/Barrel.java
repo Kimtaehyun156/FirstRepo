@@ -1,4 +1,4 @@
-package Quiz.tang;
+package Quiz.tong;
 
 public class Barrel {
 	

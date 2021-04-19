@@ -2,7 +2,7 @@ package Quiz;
 
 import java.util.Scanner;
 
-import quiz.tong.Barrel;
+import Quiz.tong.Barrel;
 
 public class C07_PirateGame {
 
