@@ -9,7 +9,7 @@ import Quiz.A03_Introduce;
         해당 클래스의 정확한 경로를 import 해야 한다.
        - 같은 패키지에 존재하는 클래스는 import 없이도 사용 할 수 있다 
  */
-import Study.A00_Hello;
+
 
 public class B02_Import {
 
