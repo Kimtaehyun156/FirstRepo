@@ -62,15 +62,15 @@ public class D07_PhoneBook {
 	}
 	
 	//4. 이름의 일부를 입력하면 일치하는 모든 정보가 출력되는 검색 메서드 
-	public static void findName(String name) {
-		String name1 = tel.get(key)
-		
-		if( tel.containsValue(name)) {
-			System.out.println("이름이있습니다");
-		}else if( tel.values() {
-			
-		}
-	}
+//	public static void findName(String name) {
+//		String name1 = tel.get(key);
+//		
+//		if( tel.containsValue(name)) {
+//			System.out.println("이름이있습니다");
+//		}else if( tel.values() {
+//			
+//		}
+//	}
 
 	
 
@@ -92,7 +92,7 @@ public class D07_PhoneBook {
 		
 		findtel();
 		
-		findName("김철수");
+		//findName("김철수");
 
 	}
 }
