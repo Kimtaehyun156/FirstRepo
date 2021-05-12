@@ -1,6 +1,7 @@
 package Quiz;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -30,8 +31,29 @@ public class E03_SaveGame {
 		Scanner sc = new Scanner(System.in);
 		System.out.println(" 플레이어 이름을 입력해주세요 > ");
 		String name = sc.next();
-		String Filetxt = "./note/"+name+".txt"; 
+		
+		String Filetxt = "./notes/"+name+".txt"; 
 		File newFile = new File(Filetxt);
+		if(newFile.isFile()) {
+			try {
+				FileInputStream fin = new FileInputStream(newFile);
+				
+				byte[] buffer = new byte[2000];
+				
+				//※ 원하는 바이트씩 읽기 
+				int len;
+				while((len= fin.read(buffer)) != -1) {
+					System.out.println(new String(buffer,0,len));
+				}
+			
+				fin.close();
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		
 		
 		Scanner sc2 = new Scanner(System.in);
 		System.out.println(" 가위(0) 바위(1) 보(2) 어떤걸 내시겠습니까 > ");
