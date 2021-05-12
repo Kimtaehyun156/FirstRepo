@@ -36,8 +36,17 @@ public class Card {
 	private Character suit;
 	private String rank;
 	private boolean isAttack;
+	private boolean isSpecial;
 	private int attackValue;
 	
+	public boolean isSpecial() {
+		return isSpecial;
+	}
+
+	public void setSpecial(boolean isSpecial) {
+		this.isSpecial = isSpecial;
+	}
+
 	public Card(Character suit , String rank) {
 		this.suit = suit;
 		this.rank = rank;

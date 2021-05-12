@@ -40,6 +40,10 @@ public class OneCardDeck {
 					card.setAttack(true);
 					card.setAttackValue(7);
 					cards.add(card);
+				}else if(rank.equals("J") || rank.equals("Q") || rank.equals("K") || rank.equals("7")) {
+					Card card = new Card(suit,rank);
+					card.setSpecial(true);
+					cards.add(card);
 				}else {
 					cards.add(new Card(suit,rank));					
 				}
@@ -50,12 +54,46 @@ public class OneCardDeck {
 	}
 	
 	public Card tableCard() {
+		if(table.size() == 0) {
+			table.add(cards.remove(0));
+		}
+		
 		return table.get(table.size() -1 );
 	}
 	
 	public boolean submitCard(Card card) {
 		
-		table.add(card);
+		Card tc = tableCard();
+		
+		boolean valid = false;
+		
+		if(tc.getRank().equals("JOKER")) {
+			System.out.println("조커뒤에 무조건 추가됨(공격이 빠졌을시 )");
+			table.add(card);
+			valid= true;
+		}else if(card.getRank().equals("JOKER")) {
+			System.out.println("조커는 무조건 추가됨");
+			table.add(card);
+			valid = true;
+		}else if(tc.getRank().equals(card.getRank())) {
+			System.out.println("숫자가 맞아서 추가됨 ");
+			table.add(card);
+			valid = true;
+		}else if(tc.getSuit().equals(card.getSuit())) {
+			System.out.println("문양이 맞아서 추가됨 ");
+			table.add(card);
+			valid = true;
+		}
+		
+		if(valid && card.isAttack()) {
+			//공격 카드에 대한 처리
+			System.out.println("방금내신카드는 공격카드입니다");
+			return true;
+		}else if( valid && card.isSpecial()) {
+			// 특수카드에 대한 처리
+			System.out.println("방금내신카드는 특수카드입니다");
+			return true;
+		}
 		
 		return false;
 	}
@@ -68,7 +106,7 @@ public class OneCardDeck {
 		
 		if(cards.size() == 0) {
 			
-			for(int i =0 , len= table.size();  i< len; ++i) {
+			for(int i =0 , len= table.size()-1;  i< len; ++i) {
 				cards.add(table.remove(0));
 			}
 			
