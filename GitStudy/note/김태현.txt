@@ -1,0 +1,2 @@
+Player(바위) VS Computer(가위) 
+  Player 승리!! 
