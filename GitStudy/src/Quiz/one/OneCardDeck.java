@@ -70,7 +70,7 @@ public class OneCardDeck {
 		if(tc.getRank().equals("JOKER")) {
 			System.out.println("조커뒤에 무조건 추가됨(공격이 빠졌을시 )");
 			table.add(card);
-			valid= true;
+			valid = true;
 		}else if(card.getRank().equals("JOKER")) {
 			System.out.println("조커는 무조건 추가됨");
 			table.add(card);
