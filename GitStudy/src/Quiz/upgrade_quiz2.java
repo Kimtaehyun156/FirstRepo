@@ -168,6 +168,8 @@ static int count=0;
 				for(int i=0; i <count; ++i) {					
 					System.out.print(String.format("사용자(%s) 시도횟수(%d) 걸린시간(%.2f) %c", din2.readUTF() , din2.readInt() ,din2.readDouble(),din2.readChar()));
 					System.out.println();
+					
+					
 				}
 
 				
