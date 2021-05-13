@@ -1,2 +1,6 @@
-Player(º¸) VS Computer(°¡À§) 
-  Computer ½Â¸®!! 
+draw 
+0½Â 0ÆÐ 1¹« 
+win!! 
+1½Â 0ÆÐ 1¹« 
+lose!! 
+1½Â 1ÆÐ 1¹« 
