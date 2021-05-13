@@ -58,8 +58,8 @@ public class E04_StreamToChar {
 			// 1.FileWriter
 			FileWriter fw = new FileWriter( new File("./data/write by file writer2.py"),Charset.forName("UTF-8"));
 			fw.append("hello word");
-			fw.close();
 			
+			fw.close();
 			
 			// 2.OutputStreamWriter
 			OutputStreamWriter out = new OutputStreamWriter( 
