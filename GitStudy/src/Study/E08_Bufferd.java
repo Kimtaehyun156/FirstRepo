@@ -1,10 +1,12 @@
 package Study;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -129,5 +131,11 @@ public class E08_Bufferd {
 		System.out.printf(" 배열사용 걸린 총 걸린시간은 %.2f 초입니다 \n", Time2);
 		System.out.printf(" 한줄씩  걸린 총 걸린시간은 %.2f 초입니다  \n", Time3);
 		System.out.printf(" 버퍼사용 출력  걸린 총 걸린시간은 %.2f 초입니다", Time4);
+		
+		try (BufferedWriter bout = new BufferedWriter(new FileWriter( new File("./data/text/abc.txt")));){
+			bout.append("Hello, BufferedWriter!");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 }
