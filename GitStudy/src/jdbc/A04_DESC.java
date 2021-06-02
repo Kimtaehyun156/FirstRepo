@@ -33,23 +33,15 @@ public class A04_DESC {
 				System.out.println( i+ "번쨰 컬럼의 크기는 ? " +meta.getColumnDisplaySize(i));  
 			}
 			
-			
-			
-			//Employee e = new Employee();
-			
-//			Class<?> employee = Class.forName("jdbc.model.Employee");
-//			
-//			for( Method method : employee.getMethods()) {
-//				System.out.println(method.getReturnType());
-//			}
-			
 			while(rs.next()) {
 				Employee e = new Employee(rs);
 				System.out.println(e.getFirst_name());
 				System.out.println(e.getLast_name());
 			}
-		
 			
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
 	
 	}
+}

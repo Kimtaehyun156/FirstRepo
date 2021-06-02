@@ -1,5 +1,6 @@
 package jdbc.quiz;
 
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -29,7 +30,12 @@ public class A06_FileBasedHikariCP {
 	public static void main(String[] args) {
 		
 		HikariConfig config = new HikariConfig("./data/text/hikari.properties");
+		
+		config.addDataSourceProperty("logWriter", new PrintWriter(System.out));
+		config.setConnectionTestQuery("SELECT 1 FROM dual");
+		
 		HikariDataSource ds = new HikariDataSource(config);
+		
 		
 
 		String sql = "SELECT * FROM employees";
@@ -41,7 +47,7 @@ public class A06_FileBasedHikariCP {
 				) 
 		{
 			while (rs.next()) {
-				System.out.println(rs.getString(2));
+				System.out.println(rs.getInt(1)  +"\t"+rs.getString(2));
 			}
 			
 		} catch (SQLException e) {

@@ -1,7 +1,7 @@
 package jdbc.model;
 
 import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Employee {
@@ -16,22 +16,32 @@ public class Employee {
 	private String job_id;
 	private int salary;
 	private double commission_pct;
-	private int manager_id;
-	private int department_id;
+	private Employee manager;
+	private Department department;
+	private Location Location;
 	
-	public Employee(ResultSet rs) throws SQLException {
-		
-		
-		employee_id = rs.getInt("employee_id");
-		first_name = rs.getString("first_name");
-		last_name = rs.getString("last_name");
-		email = rs.getString("email");
-		phone_number = rs.getString("phone_number");
-		hire_date = rs.getDate("hire_date");
-		job_id = rs.getString("job_id");
-		salary = rs.getInt("salary");
-		
-		
+	public Location getLocation() {
+		return Location;
+	}
+
+	public void setLocation(Location location) {
+		Location = location;
+	}
+
+	public Employee getManager() {
+		return manager;
+	}
+
+	public void setManager(Employee manager) {
+		this.manager = manager;
+	}
+
+	public Department getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(Department department) {
+		this.department = department;
 	}
 	
 	
@@ -89,18 +99,7 @@ public class Employee {
 	public void setCommission_pct(double commission_pct) {
 		this.commission_pct = commission_pct;
 	}
-	public int getManager_id() {
-		return manager_id;
-	}
-	public void setManager_id(int manager_id) {
-		this.manager_id = manager_id;
-	}
-	public int getDepartment_id() {
-		return department_id;
-	}
-	public void setDepartment_id(int department_id) {
-		this.department_id = department_id;
-	}
+
 	
 	
 }
